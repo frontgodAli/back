@@ -1,6 +1,6 @@
 const ProductsService = require("./service");
 const models = require("../../models");
-const { body, isISO8601, validationResult } = require("express-validator");
+const { body,param, isISO8601, validationResult } = require("express-validator");
 
 const Product = models.Product;
 const User = models.User;
@@ -82,7 +82,7 @@ function deleteProduct(req, res) {
         });
       }
 
-      const response = await productsService.deleteUser(req.params._id);
+      const response = await productsService.deleteProduct(req.params._id);
 
       return res.send(response);
     }

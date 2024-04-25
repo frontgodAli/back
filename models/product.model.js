@@ -10,6 +10,9 @@ const ProductSchema = new Schema(
     description: {
       type: String,
     },
+    price:{
+      type:Number,
+    },
     status: {
       type: String,
       enum: ["in-cart", "pending", "delivered"],

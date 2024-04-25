@@ -49,8 +49,7 @@ function updateUser(req, res) {
 
   Promise.all(
     paramsValidation.map((validation) => validation.run(req))
-  ) /* on attend que tous se fasse 
-    avant de passer à la suite*/
+  )
     .then(async () => {
       const validationErr = validationResult(req);
 
@@ -66,7 +65,6 @@ function updateUser(req, res) {
 }
 
 function deleteUser(req, res) {
-  //_id
   const paramsValidation = [
     param("id").notEmpty().withMessage("User ID is required. "),
   ];

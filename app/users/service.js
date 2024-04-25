@@ -43,7 +43,7 @@ class UsersService {
 
     if (_user) {
       return {
-        message: "User updated successfully !",
+        message: "User deleted successfully !",
       };
     }
 
