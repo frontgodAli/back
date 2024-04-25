@@ -9,8 +9,8 @@ const usersService = new UsersService({
 
 function createUser(req, res) {
   const paramsValidation = [
-    body("fullName").notEmpty().withMessage("Full Name is required."),
-    body("job").notEmpty().withMessage("Job is required."),
+    body("firstName").notEmpty().withMessage("first Name is required."),
+    body("lastName").notEmpty().withMessage("last Name is required."),
     body("role").notEmpty().withMessage("Role is required."),
     body("email").notEmpty().withMessage("Email is required."),
     body("password").notEmpty().withMessage("Password is required."),
