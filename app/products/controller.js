@@ -9,6 +9,9 @@ const productsService = new ProductsService({ Product, User });
 function createProduct(req, res) {
   const paramsValidation = [
     body("userId").notEmpty().withMessage("userId is required"),
+    body("name").notEmpty().withMessage("name is required"),
+    body("description").notEmpty().withMessage("description is required"),
+    body("status").notEmpty().withMessage("status is required").isIn(["in-cart", "pending", "delivered"]).withMessage("status must be one of ['in-cart', 'pending', 'delivered']"),
     body("shipingDate")
       .notEmpty()
       .withMessage("shiping date is required")
@@ -27,9 +30,10 @@ function createProduct(req, res) {
       const response = await productsService.createProduct(req.body);
       return res.send(response);
     })
-    .catch((_err) => {
+    .catch((err) => {
       return res.status(500).send({
         message: "Something went wrong",
+        error: err.message
       });
     });
 }

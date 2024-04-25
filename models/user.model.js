@@ -20,7 +20,7 @@ const UserSchema = new Schema({
     password: {
         type: String
     },
-    cart : [
+    products : [
         {
             type: Schema.Types.ObjectId,
             ref : 'Product'
