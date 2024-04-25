@@ -40,8 +40,8 @@ function createUser(req, res) {
 function updateUser(req, res) {
   const paramsValidation = [
     param("id").notEmpty().withMessage("User ID is required."),
-    body("fullName").notEmpty().withMessage("Full Name is required."),
-    body("job").notEmpty().withMessage("Job is required."),
+    body("firstName").notEmpty().withMessage("first name is required."),
+    body("lastName").notEmpty().withMessage("last name is required."),
     body("role").notEmpty().withMessage("Role is required."),
     body("email").notEmpty().withMessage("Email is required."),
     body("password").notEmpty().withMessage("Password is required."),

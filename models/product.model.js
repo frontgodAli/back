@@ -14,7 +14,7 @@ const ProductSchema = new Schema(
       type: String,
       enum: ["in-cart", "pending", "delivered"],
     },
-    dueDate: {
+    shipingDate: {
       type: Date,
     },
     userId: {

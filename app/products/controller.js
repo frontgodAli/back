@@ -9,11 +9,11 @@ const productsService = new ProductsService({ Product, User });
 function createProduct(req, res) {
   const paramsValidation = [
     body("userId").notEmpty().withMessage("userId is required"),
-    body("dueDate")
+    body("shipingDate")
       .notEmpty()
-      .withMessage("dueDate is required")
+      .withMessage("shiping date is required")
       .isISO8601()
-      .withMessage("dueDate must be a valid date"),
+      .withMessage("shiping date must be a valid date"),
   ];
   Promise.all(paramsValidation.map((validation) => validation.run(req)))
     .then(async () => {
@@ -37,10 +37,10 @@ function updateProduct(req, res) {
   const paramsValidation = [
     body("_id").notEmpty().withMessage("_id is required"),
     body("userId").notEmpty().withMessage("userId is required"),
-    body("dueDate")
+    body("shipingDate")
       .optional()
       .isISO8601()
-      .withMessage("dueDate must be a valid date"),
+      .withMessage("shiping Date must be a valid date"),
   ];
   Promise.all(paramsValidation.map((validation) => validation.run(req)))
     .then(async () => {
