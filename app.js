@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 console.log(`Api is running on a ${config.NODE_ENV} environment.`);
 app.get('/', function(req, res){
   res.json({
-    message: 'it works !!!'
+    message: 'it works!'
   });
 });
 app.use('/', [users, products]);

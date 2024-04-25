@@ -5,30 +5,27 @@ const { Schema } = mongoose;
 const UserSchema = new Schema({
     fullName: {
         type: String,
-        //required : true
-    },//ou fullName: String,
+    },
     job: {
         type: String
-    },//ou job: String,
+    },
     role: {
-        // rh - admain - employee
         type: String,
-        enum: ['rh', 'admin', 'employee'],
+        enum: ['admin', 'client'],
         required : false,
-    },//ou role: String,
+    },
     email: {
         type: String
-    },//ou email: String,
+    },
     password: {
         type: String
     },
-    tasks : [
+    cart : [
         {
             type: Schema.Types.ObjectId,
-            ref : 'Task'
+            ref : 'Product'
         }
     ]
-   
 },
 
 {
