@@ -43,9 +43,9 @@ class ProductsService {
       { new: true }
     );
 
-    if (!_user) {
+    if (_product) {
       return {
-        message: "product updated successufully",
+        message: "product updated successfully",
         product: _product,
       };
     }
